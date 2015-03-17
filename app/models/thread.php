@@ -29,6 +29,7 @@ class Thread extends AppModel {
         return new self($row);
     }
 
+    //Select all comments from the database and send it to view.php
     public function getComments() {
         $comments = array();
         $db = DB::conn();
@@ -40,5 +41,15 @@ class Thread extends AppModel {
        return $comments;
     }
 
+    //write comments
+    public function write(Comment $comment) {
+        $db = DB::conn();
+        $db->query(                
+         'INSERT INTO comment01 SET thread_id = ?, username = ?, body = ?, created = NOW()',        
+           array($this->id, $comment->username, $comment->body)
+        );                    
+   } 
+} //end
 
-}
+
+
