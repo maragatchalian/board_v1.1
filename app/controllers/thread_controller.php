@@ -32,8 +32,13 @@ class ThreadController extends AppController {
             case 'write_end':            
             $comment->username = Param::get('username');
             $comment->body = Param::get('body');
-            $thread->write($comment);
-            break;
+
+            try {            
+               $thread->write($comment);
+            } catch (ValidationException $e) {                    
+               $page = 'write';
+            }                        
+           break;
                 
         default:
             throw new NotFoundException("{$page} is not found");    

@@ -3,9 +3,9 @@
 <?php foreach ($comments as $k => $v): ?>
     <div class="comment">                        
     <div class="meta">
-        <?php eh($k + 1) ?>: <?php eh($v->username) ?> <?php eh($v->created) ?>            
+        <?php eh($k + 1) ?>. <?php eh($v->username) ?> <?php eh($v->created) ?>            
     </div>
-    <div><?php eh($v->body) ?></div>
+    <div><?php eh($v->body) ?></div> <br />
     </div>
 <?php endforeach ?> 
 
