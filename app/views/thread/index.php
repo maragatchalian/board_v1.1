@@ -13,3 +13,7 @@
     </li>
     <?php endforeach ?>
 </ul>
+
+<br />
+<!--Create Thread button-->
+<a class="btn btn-large btn-medium btn-info" href="<?php eh(url('thread/create')) ?>">Create</a>
