@@ -20,6 +20,16 @@ CREATE TABLE IF NOT EXISTS comment01 (
     INDEX (thread_id, created)
     )ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS user01 (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    username VARCHAR(20) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+    )ENGINE=InnoDB;
+
 
 
 

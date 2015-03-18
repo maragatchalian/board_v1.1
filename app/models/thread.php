@@ -51,7 +51,7 @@ class Thread extends AppModel {
         $rows = $db->rows('SELECT * from thread01');
 
         foreach ($rows as $row) {
-            $threads[] = new Thread($row); 
+            $threads[] = new self($row); 
             //^^create an array of object 'threads' from each row
         }
         return $threads;
@@ -65,7 +65,7 @@ class Thread extends AppModel {
         *   creating a new instance of Thread
         */
         if(!$row) {
-           throw new RecordNotFoundException('no record found');
+           throw new RecordNotFoundException('No Record Found');
         }
         return new self($row);
     }
